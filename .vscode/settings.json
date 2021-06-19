@@ -1,0 +1,12 @@
+{
+    "dart.flutterSdkPath": ".flutter",
+    "dart.analysisExcludedFolders": [
+      ".flutter"
+    ],
+    "dart.doNotFormat": [
+      ".flutter/*.dart"
+    ],
+    "search.exclude": {
+      "/.flutter": true
+    },
+  }

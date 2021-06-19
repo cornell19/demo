@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+    {
+        "name": "Demo",
+        "request": "launch",
+        "type": "dart",
+        // Arguments to be passed to the Dart or Flutter app.
+        "args": ["--dart-define", "ENV=dev"]
+    }
+    ]
+}
