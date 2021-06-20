@@ -1,16 +1,12 @@
 # demo
 
-A new Flutter project.
+Simple Demo App showing how to Structure a large Flutter project
 
-## Getting Started
+[Workshop - How to structure and manage a large Flutter project](https://www.meetup.com/londoncodeskillbuddy/events/278592755/)
 
-This project is a starting point for a Flutter application.
+Reference Links
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+-   [flutter.dev](https://flutter.dev)
+-   [State Management options](https://flutter.dev/docs/development/data-and-backend/state-mgmt/options)
+-   [BLoC Library](https://bloclibrary.dev/#/)
+-   [Flutter Version Manager](https://fvm.app)
