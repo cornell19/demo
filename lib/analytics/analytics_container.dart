@@ -1,5 +1,8 @@
+import 'package:demo/analytics/crash_analytics.dart';
+import 'package:demo/analytics/navigation_analytics.dart';
 import 'package:get_it/get_it.dart';
 
+import 'crash_analytics.dart';
 import 'user_analytics.dart';
 
 final getIt = GetIt.instance;
@@ -13,9 +16,13 @@ class AnalyticsContainer {
 
   AnalyticsContainer._internal();
 
-  UserAnalytics get userAnalytics => getIt<UserAnalytics>();
+  UserAnalytics get user => getIt<UserAnalytics>();
+  CrashAnalytics get crash => getIt<CrashAnalytics>();
+  NavigationAnalytics get navigation => getIt<NavigationAnalytics>();
 
-  static void registerRepositories() {
+  static void registerAnalytics() {
+    getIt.registerSingleton<CrashAnalytics>(CrashAnalytics());
+    getIt.registerSingleton<NavigationAnalytics>(NavigationAnalytics());
     getIt.registerLazySingleton<UserAnalytics>(() => UserAnalytics());
   }
 }

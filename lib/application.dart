@@ -33,13 +33,11 @@ class Application extends StatelessWidget {
           GlobalCupertinoLocalizations.delegate,
         ],
         supportedLocales: [
-          const Locale('en', ''), // English, no country code
-          const Locale('es', ''), // Spanish, no country code
+          const Locale('en', ''),
+          const Locale('es', ''),
         ],
         navigatorKey: NavigationService.navigationKey,
-        navigatorObservers: <NavigatorObserver>[
-          routeObserver,
-        ],
+        navigatorObservers: <NavigatorObserver>[NavigationObserver()],
         routes: routes,
         initialRoute: RouteNames.Home.name,
       ),

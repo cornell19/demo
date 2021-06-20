@@ -1,27 +1,27 @@
+import 'package:demo/analytics/analytics_container.dart';
+import 'package:demo/analytics/navigation_analytics.dart';
 import 'package:flutter/material.dart';
 
-final RouteObserver<PageRoute<dynamic>> routeObserver =
-    RouteObserver<PageRoute<dynamic>>();
-
 class NavigationObserver extends NavigatorObserver {
+  NavigationAnalytics get _analytics => AnalyticsContainer().navigation;
   @override
   Future<void> didPop(
       Route<dynamic> route, Route<dynamic>? previousRoute) async {
-    print('didPop $route');
+    _analytics.didPop(route, previousRoute);
   }
 
   @override
   void didPush(Route<dynamic>? route, Route<dynamic>? previousRoute) {
-    print('didPush $route');
+    _analytics.didPush(route, previousRoute);
   }
 
   @override
   void didRemove(Route<dynamic>? route, Route<dynamic>? previousRoute) {
-    print('didRemove $route');
+    _analytics.didRemove(route, previousRoute);
   }
 
   @override
   void didReplace({Route<dynamic>? newRoute, Route<dynamic>? oldRoute}) {
-    print('didReplace $newRoute');
+    _analytics.didReplace(newRoute: newRoute, oldRoute: oldRoute);
   }
 }

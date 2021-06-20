@@ -47,6 +47,7 @@ void main() {
       verify(() => analytics.retrieved(users)).called(1);
       verify(() => analytics.usersScreen()).called(1);
       verify(() => navigation.navigateTo(RouteNames.Users)).called(1);
+      expect(bloc!.userCount.value, 3);
       expectLater(bloc!.users, emits(users));
     });
   });

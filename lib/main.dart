@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:demo/analytics/analytics_container.dart';
 import 'package:demo/repositories/repository_container.dart';
 import 'package:demo/services/service_container.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +10,11 @@ import 'application.dart';
 import 'utils/env.dart';
 
 void main() async {
+  await initApp();
+  createApp();
+}
+
+Future<void> initApp() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await SystemChrome.setPreferredOrientations(<DeviceOrientation>[
@@ -16,8 +24,17 @@ void main() async {
 
   await Env().initEnv();
 
+  AnalyticsContainer.registerAnalytics();
   ServiceContainer.registerServices();
   RepositoryContainer.registerRepositories();
+}
 
-  runApp(Application());
+void createApp() {
+  FlutterError.onError = AnalyticsContainer().crash.recordFlutterError;
+
+  runZonedGuarded(() {
+    runApp(Application());
+  }, (e, st) {
+    AnalyticsContainer().crash.recordError(e, st);
+  });
 }

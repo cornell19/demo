@@ -16,7 +16,7 @@ class UserBloc extends BlocBase {
 
   UserRepository get _repository => RepositoryContainer().userRepository;
   NavigationService get _navigation => ServiceContainer().navigationService;
-  UserAnalytics get _analytics => AnalyticsContainer().userAnalytics;
+  UserAnalytics get _analytics => AnalyticsContainer().user;
 
   ValueNotifier<int> get userCount => _userCount;
   Stream<List<User>> get users => _users.stream;
@@ -24,11 +24,16 @@ class UserBloc extends BlocBase {
   Future<void> navigateToUsers() async {
     try {
       _analytics.get();
+
       final list = await _repository.getUsers();
+
       _users.sink.add(list);
       _analytics.retrieved(list);
+
       _userCount.value = list.length;
+
       await _navigation.navigateTo(RouteNames.Users);
+
       _analytics.usersScreen();
     } catch (e) {
       _users.sink.addError(e);
