@@ -10,3 +10,7 @@ Reference Links
 -   [State Management options](https://flutter.dev/docs/development/data-and-backend/state-mgmt/options)
 -   [BLoC Library](https://bloclibrary.dev/#/)
 -   [Flutter Version Manager](https://fvm.app)
+
+
+![BLoCArchitecture](https://user-images.githubusercontent.com/49084623/122680126-c8082a80-d1bb-11eb-9177-5daff4c934b1.png)
+
