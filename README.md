@@ -1,6 +1,4 @@
-# demo
-
-Simple Demo App showing how to Structure a large Flutter project
+# Demo App
 
 [Workshop - How to structure and manage a large Flutter project](https://www.meetup.com/londoncodeskillbuddy/events/278592755/)
 
