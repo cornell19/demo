@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 class NavigationObserver extends NavigatorObserver {
   NavigationAnalytics get _analytics => AnalyticsContainer().navigation;
+
   @override
   Future<void> didPop(
       Route<dynamic> route, Route<dynamic>? previousRoute) async {

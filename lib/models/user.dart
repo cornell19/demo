@@ -8,10 +8,13 @@ class User {
   final String firstName;
   final String lastName;
   final DateTime? dateOfBirth;
+
   User({required this.firstName, required this.lastName, this.dateOfBirth});
+
   factory User.fromMap(Map<String, dynamic> map) => _$UserFromJson(map);
   factory User.fromJson(String jsonString) =>
       User.fromMap(json.decode(jsonString));
+
   Map<String, dynamic> toMap() => _$UserToJson(this);
 
   static List<User> fromJsonList(String jsonList) {

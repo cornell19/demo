@@ -18,35 +18,35 @@ void main() {
     reset(bloc);
   });
 
-  Widget _buildWidget() {
-    return Provider<UserBloc>(
-      create: (_) => bloc,
-      dispose: (_, bloc) => bloc.dispose(),
-      child: MaterialApp(
-        localizationsDelegates: [
-          AppLocalizations.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        supportedLocales: [
-          const Locale('en', ''), // English, no country code
-          const Locale('es', ''), // Spanish, no country code
-        ],
-        navigatorKey: NavigationService.navigationKey,
-        home: UsersScreen(),
-      ),
-    );
-  }
-
   group('Users Screen', () {
     testWidgets('Loads ', (WidgetTester tester) async {
       when(() => bloc.users).thenAnswer((_) => Stream.value(users));
-      await tester.pumpWidget(_buildWidget());
+      await tester.pumpWidget(_buildWidget(bloc));
       await tester.pump(Duration.zero);
       expect(find.text('Smith, Frank'), findsOneWidget);
       expect(find.text('Smith, Jane'), findsOneWidget);
       expect(find.text('Smith, John'), findsOneWidget);
     });
   });
+}
+
+Widget _buildWidget(UserBloc bloc) {
+  return Provider<UserBloc>(
+    create: (_) => bloc,
+    dispose: (_, bloc) => bloc.dispose(),
+    child: MaterialApp(
+      localizationsDelegates: [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('en', ''), // English, no country code
+        const Locale('es', ''), // Spanish, no country code
+      ],
+      navigatorKey: NavigationService.navigationKey,
+      home: UsersScreen(),
+    ),
+  );
 }
