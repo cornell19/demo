@@ -1,8 +1,9 @@
 import 'package:demo/screens/screens.dart';
+import 'package:flutter/material.dart';
 
 import 'routeNames.dart';
 
-final routes = {
-  RouteNames.Home.name: (_) => HomeScreen(),
-  RouteNames.Users.name: (_) => UsersScreen(),
+final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
+  RouteNames.Home.name: (BuildContext context) => const HomeScreen(),
+  RouteNames.Users.name: (BuildContext context) => const UsersScreen(),
 };

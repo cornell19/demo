@@ -1,8 +1,9 @@
 class BaseError extends Error {
+  BaseError(this.message, {this.details, this.exception});
+
   final String message;
   final String? details;
-  final exception;
-  BaseError(this.message, {this.details, this.exception});
+  final dynamic exception;
 
   @override
   String toString() {

@@ -1,6 +1,8 @@
 import 'package:demo/blocs/user_bloc.dart';
 import 'package:demo/utils/language_support.dart';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 
 class UserCount extends StatelessWidget {
@@ -8,10 +10,10 @@ class UserCount extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final locale = retrieveLocale();
+    final AppLocalizations locale = retrieveLocale();
     return Row(
-      children: [
-        Spacer(
+      children: <Widget>[
+        const Spacer(
           flex: 1,
         ),
         ValueListenableBuilder<int>(

@@ -5,16 +5,16 @@ import 'package:get_it/get_it.dart';
 import 'crash_analytics.dart';
 import 'user_analytics.dart';
 
-final getIt = GetIt.instance;
+final GetIt getIt = GetIt.instance;
 
 class AnalyticsContainer {
-  static final AnalyticsContainer _singleton = AnalyticsContainer._internal();
-
   factory AnalyticsContainer() {
     return _singleton;
   }
 
   AnalyticsContainer._internal();
+
+  static final AnalyticsContainer _singleton = AnalyticsContainer._internal();
 
   UserAnalytics get user => getIt<UserAnalytics>();
   CrashAnalytics get crash => getIt<CrashAnalytics>();

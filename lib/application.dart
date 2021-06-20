@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/single_child_widget.dart';
 
 import 'blocs/user_bloc.dart';
 import 'observers/navigation_observers.dart';
@@ -15,7 +16,7 @@ class Application extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [
+      providers: <SingleChildWidget>[
         Provider<UserBloc>(
           create: (_) => UserBloc(),
           dispose: (_, UserBloc bloc) => bloc.dispose(),
@@ -26,15 +27,15 @@ class Application extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        localizationsDelegates: [
+        localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
           AppLocalizations.delegate,
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
         ],
-        supportedLocales: [
-          const Locale('en', ''),
-          const Locale('es', ''),
+        supportedLocales: const <Locale>[
+          Locale('en', ''),
+          Locale('es', ''),
         ],
         navigatorKey: NavigationService.navigationKey,
         navigatorObservers: <NavigatorObserver>[NavigationObserver()],

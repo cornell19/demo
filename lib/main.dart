@@ -9,7 +9,7 @@ import 'package:flutter/services.dart';
 import 'application.dart';
 import 'utils/env.dart';
 
-void main() async {
+Future<void> main() async {
   await initApp();
   createApp();
 }
@@ -33,8 +33,8 @@ void createApp() {
   FlutterError.onError = AnalyticsContainer().crash.recordFlutterError;
 
   runZonedGuarded(() {
-    runApp(Application());
-  }, (e, st) {
+    runApp(const Application());
+  }, (dynamic e, StackTrace st) {
     AnalyticsContainer().crash.recordError(e, st);
   });
 }

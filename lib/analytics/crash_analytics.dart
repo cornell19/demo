@@ -10,6 +10,6 @@ class CrashAnalytics {
   }
 
   Future<void> recordError(dynamic exception, StackTrace stack) async {
-    await Future.delayed(Duration(seconds: 0));
+    await Future<dynamic>.delayed(const Duration(seconds: 0));
   }
 }

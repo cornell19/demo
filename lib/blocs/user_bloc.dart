@@ -11,8 +11,8 @@ import 'package:flutter/material.dart';
 import 'package:rxdart/rxdart.dart';
 
 class UserBloc extends BlocBase {
-  final _userCount = ValueNotifier(0);
-  final _users = BehaviorSubject<List<User>>();
+  final ValueNotifier<int> _userCount = ValueNotifier<int>(0);
+  final BehaviorSubject<List<User>> _users = BehaviorSubject<List<User>>();
 
   UserRepository get _repository => RepositoryContainer().userRepository;
   NavigationService get _navigation => ServiceContainer().navigationService;
@@ -25,7 +25,7 @@ class UserBloc extends BlocBase {
     try {
       _analytics.get();
 
-      final list = await _repository.getUsers();
+      final List<User> list = await _repository.getUsers();
 
       _users.sink.add(list);
       _analytics.retrieved(list);

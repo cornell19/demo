@@ -8,8 +8,8 @@ class UserRepository {
   HttpService get _service => ServiceContainer().httpService;
 
   Future<List<User>> getUsers() async {
-    final response = await _service.getHttp('$_url/users.json');
-    final users = User.fromJsonList(response);
+    final String response = await _service.getHttp('$_url/users.json');
+    final List<User> users = User.fromJsonList(response);
     return users;
   }
 }

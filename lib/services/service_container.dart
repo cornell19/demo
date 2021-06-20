@@ -4,16 +4,16 @@ import 'analytics_service.dart';
 import 'http_service.dart';
 import 'navigation_service.dart';
 
-final getIt = GetIt.instance;
+final GetIt getIt = GetIt.instance;
 
 class ServiceContainer {
-  static final ServiceContainer _singleton = ServiceContainer._internal();
-
   factory ServiceContainer() {
     return _singleton;
   }
 
   ServiceContainer._internal();
+
+  static final ServiceContainer _singleton = ServiceContainer._internal();
 
   HttpService get httpService => getIt<HttpService>();
   NavigationService get navigationService => getIt<NavigationService>();

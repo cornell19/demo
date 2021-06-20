@@ -1,42 +1,52 @@
 import 'package:flutter/material.dart';
 
 abstract class ThemePadding {
-  static const none = 0.0;
-  static const extraSmall = 2.0;
-  static const small = 4.0;
-  static const medium = 8.0;
-  static const big = 12.0;
-  static const large = 16.0;
-  static const xl = 24.0;
-  static const xxl = 32.0;
-  static const xxxl = 96.0;
+  static const double none = 0.0;
+  static const double extraSmall = 2.0;
+  static const double small = 4.0;
+  static const double medium = 8.0;
+  static const double big = 12.0;
+  static const double large = 16.0;
+  static const double xl = 24.0;
+  static const double xxl = 32.0;
+  static const double xxxl = 96.0;
 
-  static const insetPrimary = EdgeInsets.symmetric(
+  static const EdgeInsets insetPrimary = EdgeInsets.symmetric(
     horizontal: large,
     vertical: medium,
   );
 
-  static const insetHorizontalSmall = EdgeInsets.symmetric(horizontal: small);
-  static const insetHorizontalMedium = EdgeInsets.symmetric(horizontal: medium);
-  static const insetHorizontalBig = EdgeInsets.symmetric(horizontal: big);
-  static const insetHorizontalLarge = EdgeInsets.symmetric(horizontal: large);
-  static const insetHorizontalExtraLarge = EdgeInsets.symmetric(horizontal: xl);
-  static const insetHorizontalExtraExtraLarge =
+  static const EdgeInsets insetHorizontalSmall =
+      EdgeInsets.symmetric(horizontal: small);
+  static const EdgeInsets insetHorizontalMedium =
+      EdgeInsets.symmetric(horizontal: medium);
+  static const EdgeInsets insetHorizontalBig =
+      EdgeInsets.symmetric(horizontal: big);
+  static const EdgeInsets insetHorizontalLarge =
+      EdgeInsets.symmetric(horizontal: large);
+  static const EdgeInsets insetHorizontalExtraLarge =
+      EdgeInsets.symmetric(horizontal: xl);
+  static const EdgeInsets insetHorizontalExtraExtraLarge =
       EdgeInsets.symmetric(horizontal: xxl);
-  static const insetHorizontalExtraExtraExtraLarge =
+  static const EdgeInsets insetHorizontalExtraExtraExtraLarge =
       EdgeInsets.symmetric(horizontal: xxxl);
 
-  static const insetVerticalSmall = EdgeInsets.symmetric(vertical: small);
-  static const insetVerticalMedium = EdgeInsets.symmetric(vertical: medium);
-  static const insetVerticalBig = EdgeInsets.symmetric(vertical: big);
-  static const insetVerticalLarge = EdgeInsets.symmetric(vertical: large);
-  static const insetVerticalExtraLarge = EdgeInsets.symmetric(vertical: xl);
+  static const EdgeInsets insetVerticalSmall =
+      EdgeInsets.symmetric(vertical: small);
+  static const EdgeInsets insetVerticalMedium =
+      EdgeInsets.symmetric(vertical: medium);
+  static const EdgeInsets insetVerticalBig =
+      EdgeInsets.symmetric(vertical: big);
+  static const EdgeInsets insetVerticalLarge =
+      EdgeInsets.symmetric(vertical: large);
+  static const EdgeInsets insetVerticalExtraLarge =
+      EdgeInsets.symmetric(vertical: xl);
 
-  static const insetAllSmall = EdgeInsets.all(small);
-  static const insetAllMedium = EdgeInsets.all(medium);
-  static const insetAllBig = EdgeInsets.all(big);
-  static const insetAllLarge = EdgeInsets.all(large);
-  static const insetAllExtraLarge = EdgeInsets.all(xl);
+  static const EdgeInsets insetAllSmall = EdgeInsets.all(small);
+  static const EdgeInsets insetAllMedium = EdgeInsets.all(medium);
+  static const EdgeInsets insetAllBig = EdgeInsets.all(big);
+  static const EdgeInsets insetAllLarge = EdgeInsets.all(large);
+  static const EdgeInsets insetAllExtraLarge = EdgeInsets.all(xl);
 
-  static const fab = EdgeInsets.zero;
+  static const EdgeInsets fab = EdgeInsets.zero;
 }

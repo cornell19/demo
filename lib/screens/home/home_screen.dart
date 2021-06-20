@@ -1,8 +1,8 @@
 import 'package:demo/blocs/user_bloc.dart';
-import 'package:provider/provider.dart';
 import 'package:demo/screens/home/widgets/user_count.dart';
 import 'package:demo/utils/language_support.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -11,11 +11,11 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        title: const Text('Home'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
+        children: <Widget>[
           const UserCount(),
           TextButton(
             style: TextButton.styleFrom(

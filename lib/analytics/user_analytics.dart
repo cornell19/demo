@@ -3,15 +3,15 @@ import 'package:demo/services/analytics_service.dart';
 import 'package:demo/services/service_container.dart';
 
 class _UserValues {
-  static const page = 'demo:users page';
-  static const get = 'demo: users get';
-  static const retrieved = 'demo: users retrieve';
-  static const error = 'demo: users error';
+  static const String page = 'demo:users page';
+  static const String get = 'demo: users get';
+  static const String retrieved = 'demo: users retrieve';
+  static const String error = 'demo: users error';
 }
 
 class _UserParamValues {
-  static const count = 'count';
-  static const error = 'error';
+  static const String count = 'count';
+  static const String error = 'error';
 }
 
 class UserAnalytics {
@@ -28,7 +28,7 @@ class UserAnalytics {
   void error(dynamic error) {
     _service.logEvent(
       _UserValues.error,
-      data: {
+      data: <String, dynamic>{
         _UserParamValues.error: error.toString(),
       },
     );
@@ -37,7 +37,7 @@ class UserAnalytics {
   void retrieved(List<User> users) {
     _service.logEvent(
       _UserValues.retrieved,
-      data: {
+      data: <String, dynamic>{
         _UserParamValues.count: users.length,
       },
     );

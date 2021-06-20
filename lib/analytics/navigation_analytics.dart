@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class NavigationAnalytics {
   AnalyticsService get _service => ServiceContainer().analyticsService;
 
-  void didPop(Route<dynamic> route, Route<dynamic>? previousRoute) async {
+  void didPop(Route<dynamic> route, Route<dynamic>? previousRoute) {
     _service.logScreen('didPop ${route.settings.name}');
   }
 

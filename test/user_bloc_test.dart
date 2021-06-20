@@ -14,9 +14,9 @@ import 'mocks/mock_repositories.dart';
 import 'mocks/mock_services.dart';
 
 void main() {
-  final analytics = MockUserAnalytics();
-  final repository = MockUserRepository();
-  final navigation = MockNavigationService();
+  final MockUserAnalytics analytics = MockUserAnalytics();
+  final MockUserRepository repository = MockUserRepository();
+  final MockNavigationService navigation = MockNavigationService();
 
   GetIt.instance
     ..registerSingleton<UserAnalytics>(analytics)
